@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Aliment;
+namespace App\Http\Requests\Nutriment;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAlimentRequest extends FormRequest
+class StoreNutrimentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
