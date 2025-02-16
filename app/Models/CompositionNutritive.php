@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class CompositionNutritive extends Model
+{
+    protected $fillable = [
+        'proportion',
+        'niveau_maturite_id',
+        'nutriment_id'
+    ];
+
+    public function compositions(){
+        $this->belongsTo(NiveauMaturite::class, 'niveau_maturite_id');
+    }
+
+    public function compositions_nutrives(){
+        $this->hasMany(Nutriment::class, 'nutriment_id');
+    }
+
+}
