@@ -12,12 +12,12 @@ class CompositionNutritive extends Model
         'nutriment_id'
     ];
 
-    public function compositions(){
+    public function niveau_maturite(){
         $this->belongsTo(NiveauMaturite::class, 'niveau_maturite_id');
     }
 
-    public function compositions_nutrives(){
-        $this->hasMany(Nutriment::class, 'nutriment_id');
+    public function nutriment(){
+        $this->belongsTo(Nutriment::class, 'nutriment_id');
     }
 
 }

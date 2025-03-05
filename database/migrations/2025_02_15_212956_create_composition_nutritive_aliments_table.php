@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('composition_nutritive_aliments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('nutriment_id')->constrained('nutriments');
+            $table->double('proportion');
+            
             $table->foreignId('aliment_id')->constrained('aliments');
             $table->timestamps();
 

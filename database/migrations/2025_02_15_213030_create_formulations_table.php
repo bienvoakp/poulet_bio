@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('formulations', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->boolean('is_favoris');
+            $table->boolean('favoris');
             $table->timestamps();
             $table->foreignId('created_by_id')->nullable()->constrained('users');
             $table->foreignId('updated_by_id')->nullable()->constrained('users');

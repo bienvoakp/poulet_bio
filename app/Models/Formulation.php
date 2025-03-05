@@ -11,7 +11,7 @@ class Formulation extends Model
         'favoris'
     ];
 
-    public function formulation(){
-        $this->belongsTo(FormulationAliment::class, 'formulation');
+    public function formulation_aliment(){
+        $this->hasMany(FormulationAliment::class, 'formulation_id');
     }
 }

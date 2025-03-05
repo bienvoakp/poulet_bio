@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('composition_nutritives', function (Blueprint $table) {
             $table->id();
-            $table->string('proportion');
+            $table->double('proportion');
             $table->foreignId('nutriment_id')->constrained('nutriments');
             $table->foreignId('niveau_maturite_id')->constrained('niveau_maturites');
             $table->timestamps();

@@ -1,0 +1,2 @@
+<script src="<?php echo e(asset('admin/assets/js/bundle.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/assets/js/scripts.js')); ?>"></script><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/_partials/script.blade.php ENDPATH**/ ?>

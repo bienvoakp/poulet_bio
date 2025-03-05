@@ -10,7 +10,7 @@ class Nutriment extends Model
         'titre'
     ];
 
-    public function nutriments(){
-        $this->belongsTo(CompositionNutritive::class, 'nutriment_id');
+    public function composition_nutritives(){
+        $this->hasMany(CompositionNutritive::class, 'nutriment_id');
     }
 }

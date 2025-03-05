@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('niveau_maturites', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('poids_min');
-            $table->string('poids_max');
+            $table->float('poids_min');
+            $table->float('poids_max');
             $table->integer('age_min');
             $table->integer('age_max');
-            $table->string('energie_fourni');
+            $table->string('energie'); 
             $table->timestamps();
             $table->foreignId('created_by_id')->nullable()->constrained('users');
             $table->foreignId('updated_by_id')->nullable()->constrained('users');

@@ -12,10 +12,10 @@ class NiveauMaturite extends Model
         'poids_max',
         'age_min',
         'age_max',
-        'energie_fournie'
+        'energie'
     ];
 
-    public function maturites(){
+    public function composition_nutritives(){
         $this->hasMany(CompositionNutritive::class, 'niveau_maturite_id');
     }
 }

@@ -11,11 +11,11 @@ class FormulationAliment extends Model
         'formulation_id'
     ];
 
-    public function compositions_aliments(){
-        $this->hasMany(Aliment::class, 'aliment_id');
+    public function aliment(){
+        $this->belongsTo(Aliment::class);
     }
 
-    public function formulation_alimentaire(){
-        $this->hasMany(Formulation::class, 'formulation_id');
+    public function formulation(){
+        $this->belongsTo(Formulation::class);
     }
 }
