@@ -16,18 +16,18 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     <li class="nk-menu-heading">
-                        <h6 class="overline-title text-primary-alt">Use-Case Preview</h6>
+                        <h6 class="overline-title text-primary-alt">Gestion des bêtes</h6>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
                         <a href="html/crm/index.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-user-list"></em></span>
-                            <span class="nk-menu-text">CRM Panel</span><span class="nk-menu-badge">HOT</span>
+                            <span class="nk-menu-text">Animal</span><span class="nk-menu-badge">Ani</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
                         <a href="html/hotel/index.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                            <span class="nk-menu-text">Hotel Management</span><span class="nk-menu-badge">HOT</span>
+                            <span class="nk-menu-text">Race</span><span class="nk-menu-badge">Race</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-heading">
@@ -56,11 +56,14 @@
                             <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
                             <span class="nk-menu-text">Invest Dashboard</span>
                         </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-heading">
+                    </li>
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Pre-Built Pages</h6>
-                    </li><!-- .nk-menu-heading -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    <!-- .nk-menu-heading -->
+                    
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
                             <span class="nk-menu-text">Projects</span>
@@ -73,8 +76,10 @@
                                 <a href="html/project-list.html" class="nk-menu-link"><span class="nk-menu-text">Project List</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
                             <span class="nk-menu-text">User Manage</span>
@@ -96,8 +101,9 @@
                                 <a href="html/user-card.html" class="nk-menu-link"><span class="nk-menu-text">User Contact - Card</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                             <span class="nk-menu-text">AML / KYCs</span>
@@ -110,8 +116,9 @@
                                 <a href="html/kyc-details-regular.html" class="nk-menu-link"><span class="nk-menu-text">KYC Details - Regular</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
                             <span class="nk-menu-text">Transactions</span>
@@ -124,8 +131,9 @@
                                 <a href="html/transaction-crypto.html" class="nk-menu-link"><span class="nk-menu-text">Tranx List - Crypto</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-grid-alt"></em></span>
                             <span class="nk-menu-text">Applications</span>
@@ -150,8 +158,9 @@
                                 <a href="html/apps-kanban.html" class="nk-menu-link"><span class="nk-menu-text">Kanban Board</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                             <span class="nk-menu-text">Invoice</span>
@@ -164,8 +173,10 @@
                                 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
                             <span class="nk-menu-text">Products</span>
@@ -181,23 +192,31 @@
                                 <a href="html/product-details.html" class="nk-menu-link"><span class="nk-menu-text">Product Details</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item">
                         <a href="html/pricing-table.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-view-col"></em></span>
                             <span class="nk-menu-text">Pricing Table</span>
                         </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item">
                         <a href="html/gallery.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-img"></em></span>
                             <span class="nk-menu-text">Image Gallery</span>
                         </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-heading">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Misc Pages</h6>
-                    </li><!-- .nk-menu-heading -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-heading -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-signin"></em></span>
                             <span class="nk-menu-text">Auth Pages</span>
@@ -250,8 +269,10 @@
                                 </ul>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
                             <span class="nk-menu-text">Error Pages</span>
@@ -270,8 +291,10 @@
                                 <a href="html/pages/errors/504-s1.html" target="_blank" class="nk-menu-link"><span class="nk-menu-text">504 Modern</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
                             <span class="nk-menu-text">Other Pages</span>
@@ -293,11 +316,15 @@
                                 <a href="html/pages/regular-v2.html" class="nk-menu-link"><span class="nk-menu-text">Regular Page - v2</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-heading">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Components</h6>
-                    </li><!-- .nk-menu-heading -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-heading -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-layers"></em></span>
                             <span class="nk-menu-text">Ui Elements</span>
@@ -309,7 +336,7 @@
                             <li class="nk-menu-item">
                                 <a href="html/components/elements/accordions.html" class="nk-menu-link"><span class="nk-menu-text">Accordions</span></a>
                             </li>
-                            <li class="nk-menu-item">
+                            {{-- <li class="nk-menu-item">
                                 <a href="html/components/elements/avatar.html" class="nk-menu-link"><span class="nk-menu-text">Avatar</span> <span class="nk-menu-badge">New</span></a>
                             </li>
                             <li class="nk-menu-item">
@@ -332,8 +359,8 @@
                             </li>
                             <li class="nk-menu-item">
                                 <a href="html/components/elements/list-dropdown.html" class="nk-menu-link"><span class="nk-menu-text">List Dropdown</span><span class="nk-menu-badge">New</span></a>
-                            </li>
-                            <li class="nk-menu-item">
+                            </li> --}}
+                            {{-- <li class="nk-menu-item">
                                 <a href="html/components/elements/modals.html" class="nk-menu-link"><span class="nk-menu-text">Modals</span></a>
                             </li>
                             <li class="nk-menu-item">
@@ -373,10 +400,14 @@
                                     <li class="nk-menu-item"><a href="html/components/elements/util-spacing.html" class="nk-menu-link"><span class="nk-menu-text">Spacing</span></a></li>
                                     <li class="nk-menu-item"><a href="html/components/elements/util-others.html" class="nk-menu-link"><span class="nk-menu-text">Others</span></a></li>
                                 </ul><!-- .nk-menu-sub -->
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                            </li> --}}
+                        {{-- </ul> --}}
+                        
+                        <!-- .nk-menu-sub -->
+                    {{-- </li> --}} 
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-dot-box"></em></span>
                             <span class="nk-menu-text">Crafted Icons</span>
@@ -393,14 +424,18 @@
                                 </a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item">
                         <a href="html/components/misc/icons.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-menu-circled"></em></span>
                             <span class="nk-menu-text">Icon Libraries</span>
                         </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-table-view"></em></span>
                             <span class="nk-menu-text">Tables</span>
@@ -416,8 +451,10 @@
                                 <a href="html/components/tables/table-datatable.html" class="nk-menu-link"><span class="nk-menu-text">DataTables</span> <span class="nk-menu-badge">New</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
                             <span class="nk-menu-text">Forms</span>
@@ -473,8 +510,10 @@
                                 </ul><!-- .nk-menu-sub -->
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-pie"></em></span>
                             <span class="nk-menu-text">Charts</span>
@@ -487,8 +526,10 @@
                                 <a href="html/components/charts/knob.html" class="nk-menu-link"><span class="nk-menu-text">Knob JS</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-puzzle"></em></span>
                             <span class="nk-menu-text">Widgets</span>
@@ -504,8 +545,10 @@
                                 <a href="html/components/widgets/ratings.html" class="nk-menu-link"><span class="nk-menu-text">Ratings Widgets</span><span class="nk-menu-badge">New</span></a>
                             </li><!-- .nk-menu-item -->
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-block-over"></em></span>
                             <span class="nk-menu-text">Miscellaneous</span>
@@ -533,14 +576,18 @@
                                 <a href="html/components/misc/map.html" class="nk-menu-link"><span class="nk-menu-text">Google Map</span><span class="nk-menu-badge">New</span></a>
                             </li><!-- .nk-menu-item -->
                         </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
+                    </li> --}}
+                    
+                    <!-- .nk-menu-item -->
+                    {{-- <li class="nk-menu-item">
                         <a href="html/email-templates.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-text-rich"></em></span>
                             <span class="nk-menu-text">Email Template</span>
                         </a>
-                    </li>
-                </ul><!-- .nk-menu -->
+                    </li> --}}
+                {{-- </ul> --}}
+                
+                <!-- .nk-menu -->
             </div><!-- .nk-sidebar-menu -->
         </div><!-- .nk-sidebar-content -->
     </div><!-- .nk-sidebar-element -->

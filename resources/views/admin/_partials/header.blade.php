@@ -9,8 +9,10 @@
                     <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
-            </div><!-- .nk-header-brand -->
-            <div class="nk-header-news d-none d-xl-block">
+            </div>
+            
+            <!-- .nk-header-brand -->
+            {{-- <div class="nk-header-news d-none d-xl-block">
                 <div class="nk-news-list">
                     <a class="nk-news-item" href="#">
                         <div class="nk-news-icon">
@@ -22,7 +24,10 @@
                         </div>
                     </a>
                 </div>
-            </div><!-- .nk-header-news -->
+            </div> --}}
+         
+            
+            <!-- .nk-header-news -->
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
                     <li class="dropdown language-dropdown d-none d-sm-block me-n1">
