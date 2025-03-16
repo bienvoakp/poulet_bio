@@ -1,8 +1,6 @@
-@extends('layouts.admin')
+<?php $__env->startSection('body-class', 'nk-body bg-white npc-general pg-auth'); ?>
 
-@section('body-class', 'nk-body bg-white npc-general pg-auth')
-
-@section('body')
+<?php $__env->startSection('body'); ?>
     <div class="nk-app-root">
 
         <div class="nk-main ">
@@ -24,16 +22,16 @@
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
                                         <h4 class="nk-block-title">
-                                            @yield('title')
+                                            <?php echo $__env->yieldContent('title'); ?>
                                         </h4>
                                         <div class="nk-block-des">
                                             <p>
-                                                @yield('description')
+                                                <?php echo $__env->yieldContent('description'); ?>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                @yield('content')
+                                <?php echo $__env->yieldContent('content'); ?>
                             </div>
                         </div>
                     </div>
@@ -52,4 +50,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/layouts/auth.blade.php ENDPATH**/ ?>

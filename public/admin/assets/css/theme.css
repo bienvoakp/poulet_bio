@@ -11,3 +11,7 @@ label.required::after {
     content: ' *';
     color: rgb(199, 0, 0);
 }
+
+.tb-odr-head th {
+    text-transform: none !important;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Aliment;
 use Illuminate\Http\Request;
 
 class AlimentController extends Controller
@@ -12,7 +13,9 @@ class AlimentController extends Controller
      */
     public function index()
     {
-        return view('admin.aliment.index');
+        return view('admin.aliment.index', [
+            'aliments' => Aliment::query()->paginate(10)
+        ]);
     }
 
     /**

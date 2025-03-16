@@ -15,8 +15,9 @@
         <label class="form-label {{ $required ? 'required' : '' }}" for="{{ $inputId }}"> {{ $label }}
         </label>
         <div class="form-control-wrap">
-            <input value="{{ $defaultValue }}" class="form-control" {{ $attributes->except(['value', 'id', 'class', 'name']) }}
-                id="{{ $inputId }}" name="{{ $inputName }}">
+            <input value="{{ old($inputName, $defaultValue) }}"                 class="form-control"
+                {{ $attributes->except(['value', 'id', 'class', 'name']) }} id="{{ $inputId }}"
+                name="{{ $inputName }}">
         </div>
         @error($inputName)
             <div class="text-danger">

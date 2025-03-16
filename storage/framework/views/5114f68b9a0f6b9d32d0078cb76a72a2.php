@@ -5,8 +5,10 @@ $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     'label' => '',
     'defaultValue' => '',
     'inputName' => '',
+    'placeholder' => 'Selectionner un élément dans la liste',
     'inputId' => 'id' . uniqid(),
     'class' => 'col-lg-6',
+    'options' => []
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -26,8 +28,10 @@ foreach (array_filter(([
     'label' => '',
     'defaultValue' => '',
     'inputName' => '',
+    'placeholder' => 'Selectionner un élément dans la liste',
     'inputId' => 'id' . uniqid(),
     'class' => 'col-lg-6',
+    'options' => []
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -46,13 +50,23 @@ unset($__defined_vars); ?>
 
 <div class="<?php echo e($class); ?>">
     <div class="form-group">
-        <label class="form-label <?php echo e($required ? 'required' : ''); ?>" for="<?php echo e($inputId); ?>"> <?php echo e($label); ?>
+        <label class="form-label <?php echo e($required ? 'required' : ''); ?>" for="<?php echo e($inputId); ?>">
+            <?php echo e($label); ?>
 
         </label>
         <div class="form-control-wrap">
-            <input value="<?php echo e(old($inputName, $defaultValue)); ?>"                 class="form-control"
-                <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?> id="<?php echo e($inputId); ?>"
-                name="<?php echo e($inputName); ?>">
+            <select class="form-control" id="<?php echo e($inputId); ?>" name="<?php echo e($inputName); ?>" <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?>>
+                <option value="" <?php if($required): echo 'disabled'; endif; ?> <?php echo e(old($inputName, $defaultValue) === '' ? 'selected' : ''); ?>>
+                   <?php echo e($placeholder); ?>
+
+                </option>
+                <?php $__currentLoopData = $options; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value => $option): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($value); ?>" <?php echo e(old($inputName, $defaultValue) == $value ? 'selected' : ''); ?>>
+                        <?php echo e($option); ?>
+
+                    </option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </select>
         </div>
         <?php $__errorArgs = [$inputName];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -69,4 +83,4 @@ endif;
 unset($__errorArgs, $__bag); ?>
     </div>
 </div>
-<?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/components/admin/form-input-row.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/components/admin/form-select-row.blade.php ENDPATH**/ ?>

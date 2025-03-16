@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
+use App\Traits\AlimentTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Aliment extends Model
 {
+    use AlimentTrait;
+
     protected $fillable = [
         'titre',
         'desc',
-        'disponible', 
+        'disponible',
         'motif_si_disponible',
         'energie'
     ];

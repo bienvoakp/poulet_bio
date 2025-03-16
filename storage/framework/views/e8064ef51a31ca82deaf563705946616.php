@@ -2,4 +2,4 @@
     <?php echo e($slot); ?>
 
 </button>
-<?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/components/primary-button.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/components/admin/primary-button.blade.php ENDPATH**/ ?>
