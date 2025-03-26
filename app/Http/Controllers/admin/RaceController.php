@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Race;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RaceController extends Controller
 {
@@ -12,7 +13,9 @@ class RaceController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.race.index', [
+            'races' => Race::query()->paginate(10)
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class RaceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.race.create');
     }
 
     /**

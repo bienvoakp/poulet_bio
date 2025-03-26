@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Aliment\StoreAlimentRequest;
 use App\Models\Aliment;
 use Illuminate\Http\Request;
 
@@ -23,16 +24,20 @@ class AlimentController extends Controller
      */
     public function create()
     {
-        return view('admin.aliment.create');
+        return view('admin.aliment.create', ['aliment' => new Aliment()]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(StoreAlimentRequest $request)
+{
+    $validated = $request->validated(); 
+
+    $aliment = Aliment::create($validated);
+
+    return redirect()->route('aliments.index')->with('success', 'Aliment créé avec succès');
+}
 
     /**
      * Display the specified resource.

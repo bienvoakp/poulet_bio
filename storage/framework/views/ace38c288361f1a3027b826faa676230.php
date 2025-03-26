@@ -99,10 +99,10 @@
         <div>
 
 
-            <?php if (isset($component)) { $__componentOriginald411d1792bd6cc877d687758b753742c = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald411d1792bd6cc877d687758b753742c = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.primary-button','data' => ['class' => 'd-block w-100 my-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('primary-button'); ?>
+            <?php if (isset($component)) { $__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale88f8aa40b3c8dfd1fd9d84b407092f3 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.primary-button','data' => ['class' => 'd-block w-100 my-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('admin.primary-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
@@ -113,13 +113,13 @@
 
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginald411d1792bd6cc877d687758b753742c)): ?>
-<?php $attributes = $__attributesOriginald411d1792bd6cc877d687758b753742c; ?>
-<?php unset($__attributesOriginald411d1792bd6cc877d687758b753742c); ?>
+<?php if (isset($__attributesOriginale88f8aa40b3c8dfd1fd9d84b407092f3)): ?>
+<?php $attributes = $__attributesOriginale88f8aa40b3c8dfd1fd9d84b407092f3; ?>
+<?php unset($__attributesOriginale88f8aa40b3c8dfd1fd9d84b407092f3); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginald411d1792bd6cc877d687758b753742c)): ?>
-<?php $component = $__componentOriginald411d1792bd6cc877d687758b753742c; ?>
-<?php unset($__componentOriginald411d1792bd6cc877d687758b753742c); ?>
+<?php if (isset($__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3)): ?>
+<?php $component = $__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3; ?>
+<?php unset($__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3); ?>
 <?php endif; ?>
 
             <?php if(Route::has('password.request')): ?>

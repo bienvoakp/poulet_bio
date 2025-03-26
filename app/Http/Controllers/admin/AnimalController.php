@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Animal;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -12,7 +13,9 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+        return view("admin.animal.index", [
+            'animals' => Animal::query()->paginate(10)
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.animal.create");
     }
 
     /**

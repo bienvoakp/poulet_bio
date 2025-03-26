@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('desc');
             $table->string('energie');
             $table->boolean('disponible');
-            $table->string('motif_si_indisponible')->nullable();
+            $table->string('motif_si_indisponible')->default('');
             $table->timestamps();
             $table->foreignId('created_by_id')->nullable()->constrained('users');
             $table->foreignId('updated_by_id')->nullable()->constrained('users');

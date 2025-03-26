@@ -12,6 +12,6 @@ trait AlimentTrait
 
     public function is_disponible()
     {
-        return $this->diwponible ? 'Oui' : 'Non';
+        return $this->disponible ? 'Oui' : 'Non';
     }
 }
