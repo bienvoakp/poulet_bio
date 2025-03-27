@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Race;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Race\StoreRaceRequest;
 
 class RaceController extends Controller
 {
@@ -13,8 +14,9 @@ class RaceController extends Controller
      */
     public function index()
     {
+        $races = Race::with('animaux')->paginate(10);
         return view('admin.race.index', [
-            'races' => Race::query()->paginate(10)
+            'races' => $races
         ]);
     }
 
@@ -23,15 +25,19 @@ class RaceController extends Controller
      */
     public function create()
     {
-        return view('admin.race.create');
+        return view('admin.race.create', ['race' => new Race()]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRaceRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $race = Race::create($validated);
+
+        return redirect()->route('races.index')->with('success', 'Race créé avec succès');
     }
 
     /**

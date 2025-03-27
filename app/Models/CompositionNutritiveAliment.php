@@ -15,11 +15,11 @@ class CompositionNutritiveAliment extends Model
 
     public function aliment()
     {
-        $this->belongsTo(Aliment::class, 'aliment_id');
+        return $this->belongsTo(Aliment::class, 'aliment_id');
     }
 
     public function nutriment()
     {
-        $this->belongsTo(Nutriment::class, 'nutriment_id');
+        return $this->belongsTo(Nutriment::class, 'nutriment_id');
     }
 }

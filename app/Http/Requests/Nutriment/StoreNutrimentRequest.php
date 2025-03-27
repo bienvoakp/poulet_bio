@@ -22,7 +22,8 @@ class StoreNutrimentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:255',
+            'desc' => 'required|string',
         ];
     }
 }

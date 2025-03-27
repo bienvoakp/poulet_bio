@@ -124,7 +124,7 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>... <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal3fb29bab3a8233ace8b2e12477ba4761)): ?>
 <?php $attributes = $__attributesOriginal3fb29bab3a8233ace8b2e12477ba4761; ?>
@@ -233,7 +233,23 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?>.. <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>
+                        <td class="tb-odr-action">
+                            <div class="tb-odr-btns d-none d-md-inline">
+                                <a href="#" class="btn btn-sm btn-primary">View</a>
+                            </div>
+                            <div class="dropdown">
+                                <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
+                                    <ul class="link-list-plain">
+                                        <li><a href="#" class="text-primary">Edit</a></li>
+                                        <li><a href="#" class="text-primary">View</a></li>
+                                        <li><a href="#" class="text-danger">Remove</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                     <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginaleca1dccf8d8f432f50f17071a804c199)): ?>
 <?php $attributes = $__attributesOriginaleca1dccf8d8f432f50f17071a804c199; ?>

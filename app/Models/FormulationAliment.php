@@ -12,10 +12,10 @@ class FormulationAliment extends Model
     ];
 
     public function aliment(){
-        $this->belongsTo(Aliment::class);
+        return $this->belongsTo(Aliment::class);
     }
 
     public function formulation(){
-        $this->belongsTo(Formulation::class);
+        return $this->belongsTo(Formulation::class);
     }
 }

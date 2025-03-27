@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Race;
 use Illuminate\Database\Eloquent\Model;
 
 class Animal extends Model
@@ -12,7 +13,7 @@ class Animal extends Model
         'desc'
     ];
 
-    public function races(){
-        $this->belongsTo(Race::class, 'race_id');
+    public function race(){
+        return $this->belongsTo(Race::class);
     }
 }

@@ -13,11 +13,11 @@ class CompositionNutritive extends Model
     ];
 
     public function niveau_maturite(){
-        $this->belongsTo(NiveauMaturite::class, 'niveau_maturite_id');
+        return $this->belongsTo(NiveauMaturite::class, 'niveau_maturite_id');
     }
 
     public function nutriment(){
-        $this->belongsTo(Nutriment::class, 'nutriment_id');
+        return $this->belongsTo(Nutriment::class, 'nutriment_id');
     }
 
 }

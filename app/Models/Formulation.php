@@ -12,6 +12,6 @@ class Formulation extends Model
     ];
 
     public function formulation_aliment(){
-        $this->hasMany(FormulationAliment::class, 'formulation_id');
+        return $this->hasMany(FormulationAliment::class, 'formulation_id');
     }
 }

@@ -16,6 +16,6 @@ class NiveauMaturite extends Model
     ];
 
     public function composition_nutritives(){
-        $this->hasMany(CompositionNutritive::class, 'niveau_maturite_id');
+        return $this->hasMany(CompositionNutritive::class, 'niveau_maturite_id');
     }
 }

@@ -15,7 +15,7 @@
         @include('admin.race._partials.form')
 
         <div class="col-12">
-            <x-admin.primary-button href="{{ route('races.index') }}">Enregistrer</x-admin.primary-button>
+            <x-admin.primary-button>Enregistrer</x-admin.primary-button>
         </div>
     </form>
 

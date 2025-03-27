@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Nutriment extends Model
 {
     protected $fillable = [
-        'titre'
+        'titre',
+        'desc'
     ];
 
     public function composition_nutritives(){
-        $this->hasMany(CompositionNutritive::class, 'nutriment_id');
+        return $this->hasMany(CompositionNutritive::class, 'nutriment_id');
     }
 }

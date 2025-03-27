@@ -12,6 +12,6 @@ class Race extends Model
     ];
 
     public function animaux(){
-        $this->hasMany(Animal::class, 'race_id');
+        return $this->hasMany(Animal::class);
     }
 }

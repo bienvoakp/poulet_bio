@@ -31,13 +31,13 @@ class AlimentController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreAlimentRequest $request)
-{
-    $validated = $request->validated(); 
+    {
+        $validated = $request->validated();
 
-    $aliment = Aliment::create($validated);
+        $aliment = Aliment::create($validated);
 
-    return redirect()->route('aliments.index')->with('success', 'Aliment créé avec succès');
-}
+        return redirect()->route('aliments.index')->with('success', 'Aliment créé avec succès');
+    }
 
     /**
      * Display the specified resource.

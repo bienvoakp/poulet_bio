@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Animal\StoreAnimalRequest;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,11 @@ class AnimalController extends Controller
      */
     public function index()
     {
+
+        $animals = Animal::with('race')->paginate(10);
+
         return view("admin.animal.index", [
-            'animals' => Animal::query()->paginate(10)
+            'animals' =>$animals
         ]);
     }
 
@@ -23,15 +27,19 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        return view("admin.animal.create");
+        return view("admin.animal.create", ['animal' => new Animal()]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAnimalRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $animal = Animal::create($validated);
+
+        return redirect()->route('animaux.index')->with('success', 'U animal créé avec succès');
     }
 
     /**
