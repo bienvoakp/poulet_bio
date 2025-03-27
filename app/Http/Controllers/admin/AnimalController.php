@@ -14,7 +14,6 @@ class AnimalController extends Controller
      */
     public function index()
     {
-
         $animals = Animal::with('race')->paginate(10);
 
         return view("admin.animal.index", [
@@ -39,7 +38,7 @@ class AnimalController extends Controller
 
         $animal = Animal::create($validated);
 
-        return redirect()->route('animaux.index')->with('success', 'U animal créé avec succès');
+        return redirect()->route('animaux.index')->with('success', 'Un animal créé avec succès');
     }
 
     /**
@@ -47,7 +46,11 @@ class AnimalController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $animal = Animal::with('race')->findOrFail($id);
+
+        return view('admin.animal.show', [
+            'animal' => $animal
+        ]);
     }
 
     /**
@@ -55,15 +58,25 @@ class AnimalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+
+        return view('admin.animal.edit', [
+            'animal' => $animal
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreAnimalRequest $request, string $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+
+        $validated = $request->validated();
+
+        $animal->update($validated);
+
+        return redirect()->route('animaux.index')->with('success', 'Animal modifié avec succès');
     }
 
     /**
@@ -71,6 +84,10 @@ class AnimalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+
+        $animal->delete();
+
+        return redirect()->route('animaux.index')->with('success', 'Animal supprimé avec succès');
     }
 }

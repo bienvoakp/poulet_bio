@@ -208,16 +208,20 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
                         <td class="tb-odr-action">
-                            <div class="tb-odr-btns d-none d-md-inline">
-                                <a href="#" class="btn btn-sm btn-primary">View</a>
-                            </div>
+
                             <div class="dropdown">
                                 <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
                                     <ul class="link-list-plain">
-                                        <li><a href="#" class="text-primary">Edit</a></li>
-                                        <li><a href="#" class="text-primary">View</a></li>
-                                        <li><a href="#" class="text-danger">Remove</a></li>
+                                        <li><a href="<?php echo e(route('animaux.edit', $animal->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
+
+                                        <li><a href="<?php echo e(route('animaux.show', $animal->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
+
+                                        <li><a href="<?php echo e(route('animaux.destroy', $animal->id)); ?>" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cet animal ?')) document.getElementById('delete-animal-<?php echo e($animal->id); ?>').submit();"><i class="fas fa-trash"></i></a></li>
+                                        <form id="delete-animal-<?php echo e($animal->id); ?>" action="<?php echo e(route('animaux.destroy', $animal->id)); ?>" method="POST" style="display: none;">
+                                            <?php echo csrf_field(); ?>
+                                            <?php echo method_field('DELETE'); ?>
+                                        </form>
                                     </ul>
                                 </div>
                             </div>

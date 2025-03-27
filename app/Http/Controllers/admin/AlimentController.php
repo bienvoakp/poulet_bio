@@ -44,7 +44,11 @@ class AlimentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $aliment = Aliment::findOrFail($id);
+
+        return view('admin.aliment.show', [
+            'aliment' => $aliment
+        ]);
     }
 
     /**
@@ -52,15 +56,25 @@ class AlimentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $aliment = Aliment::findOrFail($id);
+
+        return view('admin.aliment.edit', [
+            'aliment' => $aliment
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreAlimentRequest $request, string $id)
     {
-        //
+        $aliment = Aliment::findOrFail($id);
+
+        $validated = $request->validated();
+
+        $aliment->update($validated);
+
+        return redirect()->route('aliments.index')->with('success', 'Aliment modifié avec succès');
     }
 
     /**
@@ -68,6 +82,10 @@ class AlimentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $aliment = Aliment::findOrFail($id);
+
+        $aliment->delete();
+
+        return redirect()->route('aliments.index')->with('success', 'Aliment supprimé avec succès');
     }
 }

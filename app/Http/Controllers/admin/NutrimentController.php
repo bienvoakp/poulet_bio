@@ -45,7 +45,11 @@ class NutrimentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $nutriment = Nutriment::findOrFail($id);
+
+        return view('admin.nutriment.show', [
+            'nutriment' => $nutriment
+        ]);
     }
 
     /**
@@ -53,15 +57,25 @@ class NutrimentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $nutriment = Nutriment::findOrFail($id);
+
+        return view('admin.nutriment.edit', [
+            'nutriment' => $nutriment
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreNutrimentRequest $request, string $id)
     {
-        //
+        $nutriment = Nutriment::findOrFail($id);
+
+        $validated = $request->validated();
+
+        $nutriment->update($validated);
+
+        return redirect()->route('nutriments.index')->with('success', 'Nutriment modifié avec succès');
     }
 
     /**
@@ -69,6 +83,10 @@ class NutrimentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $nutriment = Nutriment::findOrFail($id);
+
+        $nutriment->delete();
+
+        return redirect()->route('nutriments.index')->with('success', 'Nutriment supprimé avec succès');
     }
 }

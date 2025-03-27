@@ -117,11 +117,11 @@
 
          <?php $__env->slot('tbody', null, []); ?> 
             <?php
-                $races = \App\Models\Race::paginate(10);
+                $nutriments = \App\Models\nutriment::paginate(10);
             ?>
 
             <?php $__currentLoopData = $nutriments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $nutriment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php if (isset($component)) { $__componentOriginal06c3fe66d396abf7c82811bd08cac844 = $component; } ?>
+            <?php if (isset($component)) { $__componentOriginal06c3fe66d396abf7c82811bd08cac844 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal06c3fe66d396abf7c82811bd08cac844 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.tr','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.tr'); ?>
@@ -131,7 +131,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-                    <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
+                <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginaleca1dccf8d8f432f50f17071a804c199 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.td'); ?>
@@ -150,7 +150,7 @@
 <?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
 <?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
+                <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginaleca1dccf8d8f432f50f17071a804c199 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.td'); ?>
@@ -169,7 +169,7 @@
 <?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
 <?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
+                <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginaleca1dccf8d8f432f50f17071a804c199 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.td'); ?>
@@ -188,7 +188,7 @@
 <?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
 <?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
+                <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginaleca1dccf8d8f432f50f17071a804c199 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.td'); ?>
@@ -198,8 +198,26 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
+                    <td class="tb-odr-action">
 
-                     <?php echo $__env->renderComponent(); ?>
+                        <div class="dropdown">
+                            <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
+                                <ul class="link-list-plain">
+                                    <li><a href="<?php echo e(route('nutriments.edit', $nutriment->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
+
+                                    <li><a href="<?php echo e(route('nutriments.show', $nutriment->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
+
+                                    <li><a href="<?php echo e(route('nutriments.destroy', $nutriment->id)); ?>" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cette nutriment ?')) document.getElementById('delete-nutriment-<?php echo e($nutriment->id); ?>').submit();"><i class="fas fa-trash"></i></a></li>
+                                    <form id="delete-nutriment-<?php echo e($nutriment->id); ?>" action="<?php echo e(route('nutriments.destroy', $nutriment->id)); ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                    </form>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginaleca1dccf8d8f432f50f17071a804c199)): ?>
 <?php $attributes = $__attributesOriginaleca1dccf8d8f432f50f17071a804c199; ?>
@@ -209,7 +227,7 @@
 <?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
 <?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
 <?php endif; ?>
-                 <?php echo $__env->renderComponent(); ?>
+             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal06c3fe66d396abf7c82811bd08cac844)): ?>
 <?php $attributes = $__attributesOriginal06c3fe66d396abf7c82811bd08cac844; ?>

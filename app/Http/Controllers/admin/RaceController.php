@@ -45,7 +45,11 @@ class RaceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $race = Race::findOrFail($id);
+
+        return view('admin.race.show', [
+            'race' => $race
+        ]);
     }
 
     /**
@@ -53,15 +57,25 @@ class RaceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $race = Race::findOrFail($id);
+
+        return view('admin.race.edit', [
+            'race' => $race
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreRaceRequest $request, string $id)
     {
-        //
+        $race = Race::findOrFail($id);
+
+        $validated = $request->validated();
+
+        $race->update($validated);
+
+        return redirect()->route('races.index')->with('success', 'Race modifié avec succès');
     }
 
     /**
@@ -69,6 +83,10 @@ class RaceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $race = Race::findOrFail($id);
+
+        $race->delete();
+
+        return redirect()->route('races.index')->with('success', 'Race supprimé avec succès');
     }
 }
