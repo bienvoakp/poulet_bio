@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Nutriment\StoreNutrimentRequest;
 use App\Models\Nutriment;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Nutriment\StoreNutrimentRequest;
+use App\Http\Requests\Nutriment\UpdateNutrimentRequest;
 
 class NutrimentController extends Controller
 {
@@ -67,7 +68,7 @@ class NutrimentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreNutrimentRequest $request, string $id)
+    public function update(UpdateNutrimentRequest $request, string $id)
     {
         $nutriment = Nutriment::findOrFail($id);
 

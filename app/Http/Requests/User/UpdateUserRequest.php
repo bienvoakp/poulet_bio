@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Race;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRaceRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,8 +22,7 @@ class UpdateRaceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'titre' => 'required|string|max:255',
-            'desc' => 'required|string',
+            //
         ];
     }
 }

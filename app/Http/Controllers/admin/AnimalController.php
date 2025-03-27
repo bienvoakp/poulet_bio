@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Animal\StoreAnimalRequest;
 use App\Models\Animal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Animal\StoreAnimalRequest;
+use App\Http\Requests\Animal\UpdateAnimalRequest;
 
 class AnimalController extends Controller
 {
@@ -68,7 +69,7 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreAnimalRequest $request, string $id)
+    public function update(UpdateAnimalRequest $request, string $id)
     {
         $animal = Animal::findOrFail($id);
 

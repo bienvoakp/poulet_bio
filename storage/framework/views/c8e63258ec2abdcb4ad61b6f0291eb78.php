@@ -9,7 +9,7 @@
     <title>
         Poultry - <?php echo $__env->yieldContent('title'); ?>
     </title>
-    <?php echo $__env->make('admin._partials.link', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('admin._partials.link', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->yieldContent('link'); ?>
 </head>
 
@@ -17,24 +17,29 @@
     <?php if (empty(trim($__env->yieldContent('body')))): ?>
         <div class="nk-app-root">
             <div class="nk-main">
-                <?php echo $__env->make('admin._partials.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('admin._partials.sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                 <div class="nk-wrap ">
-                    <?php echo $__env->make('admin._partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php echo $__env->make('admin._partials.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                     <div class="nk-content">
                         <div class="container-fluid">
                             <div class="nk-content-inner">
                                 <div class="nk-content-body">
                                     <?php if (empty(trim($__env->yieldContent('navigation')))): ?>
-                                        <?php echo $__env->make('admin._partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <?php echo $__env->make('admin._partials.navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                     <?php else: ?>
                                         <?php echo $__env->yieldContent('navigation'); ?>
                                     <?php endif; ?>
+
+
+
+
+
                                     <?php echo $__env->yieldContent('content'); ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php echo $__env->make('admin._partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php echo $__env->make('admin._partials.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                 </div>
             </div>
         </div>
@@ -43,10 +48,11 @@
     <?php endif; ?>
     <?php echo $__env->yieldContent('modal'); ?>
 
-    <?php echo $__env->make('admin._partials.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('admin._partials.script', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <?php echo $__env->yieldContent('script'); ?>
-</body>
 
+  <?php echo $__env->make('admin._partials.iziToast', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+</body>
 </html>
 <?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/layouts/admin.blade.php ENDPATH**/ ?>

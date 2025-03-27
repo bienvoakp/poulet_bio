@@ -22,7 +22,9 @@ class UpdateAnimalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:255',
+            'desc' => 'required|string',
+            'race_id' => 'required|exists:races,id',
         ];
     }
 }

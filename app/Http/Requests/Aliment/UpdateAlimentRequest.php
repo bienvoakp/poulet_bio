@@ -22,7 +22,11 @@ class UpdateAlimentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:255',
+            'desc' => 'required|string',
+            'energie' => 'required|numeric',
+            'disponible' => 'sometimes|boolean',
+            'motif_si_indisponible' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

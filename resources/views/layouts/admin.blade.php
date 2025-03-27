@@ -29,6 +29,11 @@
                                     @else
                                         @yield('navigation')
                                     @endif
+
+
+
+
+
                                     @yield('content')
                                 </div>
                             </div>
@@ -46,6 +51,7 @@
     @include('admin._partials.script')
 
     @yield('script')
-</body>
 
+  @include('admin._partials.iziToast')
+</body>
 </html>

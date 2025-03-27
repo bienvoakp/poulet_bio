@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Aliment\StoreAlimentRequest;
 use App\Models\Aliment;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Aliment\StoreAlimentRequest;
+use App\Http\Requests\Aliment\UpdateAlimentRequest;
 
 class AlimentController extends Controller
 {
@@ -66,7 +67,7 @@ class AlimentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreAlimentRequest $request, string $id)
+    public function update(UpdateAlimentRequest $request, string $id)
     {
         $aliment = Aliment::findOrFail($id);
 

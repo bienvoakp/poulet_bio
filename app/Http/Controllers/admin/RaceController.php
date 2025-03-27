@@ -6,6 +6,7 @@ use App\Models\Race;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Race\StoreRaceRequest;
+use App\Http\Requests\Race\UpdateRaceRequest;
 
 class RaceController extends Controller
 {
@@ -67,7 +68,7 @@ class RaceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreRaceRequest $request, string $id)
+    public function update(UpdateRaceRequest $request, string $id)
     {
         $race = Race::findOrFail($id);
 

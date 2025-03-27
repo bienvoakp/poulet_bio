@@ -1,5 +1,5 @@
-<?php $__env->startSection('title', 'Modifier une nutriment'); ?>
-<?php $__env->startSection('description', 'Dans cette page, vous pouvez modifier une nutriment'); ?>
+<?php $__env->startSection('title', 'Modifier un nutriment'); ?>
+<?php $__env->startSection('description', 'Dans cette page, vous pouvez modifier un nutriment'); ?>
 
 <?php $__env->startSection('actions'); ?>
     <?php if (isset($component)) { $__componentOriginal1e0bc8188a7ac6ee79fdf96936c3949b = $component; } ?>
@@ -39,7 +39,7 @@
         </div>
     <?php endif; ?>
 
-        <?php echo $__env->make('admin.nutriment._partials.form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('admin.nutriment._partials.form', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
         <div class="col-12">
             <?php if (isset($component)) { $__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3 = $component; } ?>
@@ -66,4 +66,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/nutriment/edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/nutriment/edit.blade.php ENDPATH**/ ?>
