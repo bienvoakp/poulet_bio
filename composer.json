@@ -10,7 +10,7 @@
         "laragear/alerts": "^2.0",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.4",
+        "livewire/livewire": "^3.6",
         "livewire/volt": "^1.0",
         "mckenziearts/laravel-notify": "*",
         "spatie/laravel-permission": "^6.16"
@@ -31,7 +31,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/DateHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

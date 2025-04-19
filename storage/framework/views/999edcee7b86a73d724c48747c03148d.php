@@ -1,4 +1,7 @@
+<?php ($useRepeater = true); ?>
+
 <?php $__env->startSection('title', 'Créer un aliment'); ?>
+
 <?php $__env->startSection('description', 'Ajouter un aliment à votre ration '); ?>
 
 <?php $__env->startSection('actions'); ?>
@@ -39,7 +42,7 @@
         <?php endif; ?>
 
 
-         <?php echo $__env->make('admin.aliment._partials.form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+         <?php echo $__env->make('admin.aliment._partials.form', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 
         <div class="col-12">
@@ -67,4 +70,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/aliment/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/aliment/create.blade.php ENDPATH**/ ?>

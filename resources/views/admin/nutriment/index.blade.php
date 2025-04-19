@@ -15,7 +15,7 @@
             <x-admin.table.th>#</x-admin.table.th>
             <x-admin.table.th>Titre</x-admin.table.th>
             <x-admin.table.th>Description</x-admin.table.th>
-            <x-admin.table.th>...</x-admin.table.th>
+            <x-admin.table.th class="text-center"><em class="icon ni ni-more-h"></em></x-admin.table.th>
         </x-slot:thead>
 
         <x-slot:tbody>
@@ -28,8 +28,7 @@
                 <x-admin.table.td> {{ $nutriments->firstItem() + $key }} </x-admin.table.td>
                 <x-admin.table.td> {{ $nutriment->titre }} </x-admin.table.td>
                 <x-admin.table.td> {{ $nutriment->desc }} </x-admin.table.td>
-                <x-admin.table.td>
-                    <td class="tb-odr-action">
+                <x-admin.table.td-action class="text-center">
 
                         <div class="dropdown">
                             <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
@@ -47,8 +46,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </td>
-                </x-admin.table.td>
+                </x-admin.table.td-action>
             </x-admin.table.tr>
             @endforeach
         </x-slot:tbody>

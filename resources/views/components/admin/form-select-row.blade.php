@@ -18,7 +18,7 @@
             {{ $label }}
         </label>
         <div class="form-control-wrap">
-            <select class="form-control" id="{{ $inputId }}" name="{{ $inputName }}" {{ $attributes->except(['value', 'id', 'class', 'name']) }}>
+            <select class="form-select" id="{{ $inputId }}" name="{{ $inputName }}" {{ $attributes->except(['value', 'id', 'class', 'name']) }}>
                 <option value="" @disabled($required) {{ old($inputName, $defaultValue) === '' ? 'selected' : '' }}>
                    {{ $placeholder }}
                 </option>

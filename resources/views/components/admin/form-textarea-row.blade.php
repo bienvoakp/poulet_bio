@@ -16,7 +16,7 @@
         </label>
         <div class="form-control-wrap">
             <textarea class="form-control" {{ $attributes->except(['value', 'id', 'class', 'name']) }} id="{{ $inputId }}"
-                name="{{ $inputName }}">{{ $defaultValue }}</textarea>
+                name="{{ $inputName }}">{{ old($inputName, $defaultValue) }}</textarea>
         </div>
         @error($inputName)
             <div class="text-danger">

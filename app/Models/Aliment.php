@@ -17,11 +17,13 @@ class Aliment extends Model
         'energie'
     ];
 
-    public function formulations(){
-        $this->hasMany(FormulationAliment::class, 'aliment_id');
+    public function formulations()
+    {
+        return $this->hasMany(FormulationAliment::class, 'aliment_id');
     }
 
-    public function composition_nutritives(){
-        $this->hasMany(CompositionNutritive::class, 'aliment_id');
+    public function composition_nutritives()
+    {
+        return $this->hasMany(CompositionNutritiveAliment::class, 'aliment_id');
     }
 }

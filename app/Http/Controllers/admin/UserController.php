@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Models\Race;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.user.index', compact('users'));
+        return view('admin.user.index',
+    ['users' => $users]);
     }
 
     /**
@@ -26,8 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin.user.create', compact('roles'));
+        return view('admin.user.create', ['user' => new User()] );
     }
 
     /**
@@ -35,10 +36,11 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
+        $validated = $request->validated();
 
+        $user = User::create($validated);
 
-        return redirect()->route('utilisateurs.index')
-            ->with('success', 'User created successfully.');
+        return redirect()->route('users.index')->with('success', 'Utilisateur créé avec succès');
     }
 
     /**
@@ -72,7 +74,7 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        
+
         return redirect()->route('admin.users.index')
             ->with('success', 'User deleted successfully.');
     }

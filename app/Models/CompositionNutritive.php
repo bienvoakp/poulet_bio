@@ -9,7 +9,8 @@ class CompositionNutritive extends Model
     protected $fillable = [
         'proportion',
         'niveau_maturite_id',
-        'nutriment_id'
+        'nutriment_id',
+        
     ];
 
     public function niveau_maturite(){

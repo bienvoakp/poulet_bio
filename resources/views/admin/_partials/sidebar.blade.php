@@ -29,7 +29,7 @@
                     <x-admin.sidebar-menu-link label="Nutriments" href="{{ route('nutriments.index') }}" icon="fas fa-seedling" />
 
                     <x-admin.sidebar-menu-title title='Administration' />
-                    <x-admin.sidebar-menu-link label="Gestion des utilisateurs" href="/demoa" icon="ni ni-shield-check-fill" />
+                    <x-admin.sidebar-menu-link label="Gestion des utilisateurs" href="{{ route('users.index') }}" icon="ni ni-shield-check-fill" />
 
                 </ul>
 

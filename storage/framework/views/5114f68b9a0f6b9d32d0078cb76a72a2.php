@@ -55,7 +55,7 @@ unset($__defined_vars); ?>
 
         </label>
         <div class="form-control-wrap">
-            <select class="form-control" id="<?php echo e($inputId); ?>" name="<?php echo e($inputName); ?>" <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?>>
+            <select class="form-select" id="<?php echo e($inputId); ?>" name="<?php echo e($inputName); ?>" <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?>>
                 <option value="" <?php if($required): echo 'disabled'; endif; ?> <?php echo e(old($inputName, $defaultValue) === '' ? 'selected' : ''); ?>>
                    <?php echo e($placeholder); ?>
 

@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
+@php($useRepeater = true)
+
 @section('title', 'Créer un aliment')
+
 @section('description', 'Ajouter un aliment à votre ration ')
 
 @section('actions')

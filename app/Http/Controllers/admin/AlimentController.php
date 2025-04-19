@@ -36,6 +36,10 @@ class AlimentController extends Controller
         $validated = $request->validated();
 
         $aliment = Aliment::create($validated);
+        $aliment->composition_nutritives()->createMany($request->composition_nutritive_aliments ?? []);
+
+        // dd($request->all());
+
 
         return redirect()->route('aliments.index')->with('success', 'Aliment créé avec succès');
     }

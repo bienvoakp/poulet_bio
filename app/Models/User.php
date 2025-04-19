@@ -13,7 +13,8 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-    // use HasRoles, SoftDeletes;
+    use HasRoles;
+    // SoftDeletes;
 
     // const CLASS_NAME = 'Utilisateur';
 
@@ -27,11 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        // 'is_on_first_login',
-        // 'email_verified_at',
-        // 'created_by_id',
-        // 'updated_by_id',
-        // 'deleted_by',
+
     ];
 
     /**

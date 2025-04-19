@@ -28,6 +28,8 @@ class StoreAlimentRequest extends FormRequest
             'energie' => 'required|numeric',
             'disponible' => 'sometimes|boolean',
             'motif_si_indisponible' => ['nullable', 'string', 'max:255'],
+            'composition_nutritive_aliments' => 'array',
+            'composition_nutritive_aliments.*' => 'array:nitriment_id,proportion'
         ];
     }
 }

@@ -6,12 +6,14 @@ Ajouter un utilisateur
 @endsection
 
 @section('actions')
-    <x-admin.primary-link href="{{ route('utilisateurs.index') }}">Retour</x-admin.primary-link>
+    <x-admin.primary-link href="{{ route('users.index') }}">Retour</x-admin.primary-link>
 @endsection
 
 @section('content')
-<form class="row gy-4" action="{{ route('utilisateurs.store') }}" method="POST">
+<form class="row gy-4" action="{{ route('users.store') }}" method="POST">
     @csrf
+
+    {{-- @dump($errors->all()) --}}
 
     @include('admin.user._partials.form')
 

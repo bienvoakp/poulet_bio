@@ -51,7 +51,7 @@ unset($__defined_vars); ?>
         </label>
         <div class="form-control-wrap">
             <textarea class="form-control" <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?> id="<?php echo e($inputId); ?>"
-                name="<?php echo e($inputName); ?>"><?php echo e($defaultValue); ?></textarea>
+                name="<?php echo e($inputName); ?>"><?php echo e(old($inputName, $defaultValue)); ?></textarea>
         </div>
         <?php $__errorArgs = [$inputName];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

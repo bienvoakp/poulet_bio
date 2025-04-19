@@ -9,13 +9,13 @@ use App\Http\Controllers\admin\AnimalController;
 use App\Http\Controllers\admin\AlimentController;
 use App\Http\Controllers\admin\NutrimentController;
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('administration')->group(function () {
         Route::get('/', [HomeController::class, 'index']);
         Route::resource('/aliments', AlimentController::class);
         Route::resource('/races', RaceController::class);
         Route::resource('/nutriments', NutrimentController::class);
         Route::resource('/animaux', AnimalController::class);
-        Route::resource('/utilisateurs', UserController::class);
+        Route::resource('/users', UserController::class);
     });
 });

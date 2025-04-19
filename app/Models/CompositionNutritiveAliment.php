@@ -10,7 +10,6 @@ class CompositionNutritiveAliment extends Model
         'proportion',
         'aliment_id',
         'nutriment_id'
-
     ];
 
     public function aliment()

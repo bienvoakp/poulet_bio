@@ -183,14 +183,14 @@
 <?php endif; ?>
                     <?php if (isset($component)) { $__componentOriginal53a75cf76934e0059aa69f821f845af4 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53a75cf76934e0059aa69f821f845af4 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.sidebar-menu-link','data' => ['label' => 'Gestion des utilisateurs','href' => '/demoa','icon' => 'ni ni-shield-check-fill']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.sidebar-menu-link','data' => ['label' => 'Gestion des utilisateurs','href' => ''.e(route('users.index')).'','icon' => 'ni ni-shield-check-fill']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.sidebar-menu-link'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['label' => 'Gestion des utilisateurs','href' => '/demoa','icon' => 'ni ni-shield-check-fill']); ?>
+<?php $component->withAttributes(['label' => 'Gestion des utilisateurs','href' => ''.e(route('users.index')).'','icon' => 'ni ni-shield-check-fill']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal53a75cf76934e0059aa69f821f845af4)): ?>

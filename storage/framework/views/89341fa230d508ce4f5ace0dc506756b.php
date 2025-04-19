@@ -96,14 +96,14 @@
 <?php endif; ?>
             <?php if (isset($component)) { $__componentOriginal3fb29bab3a8233ace8b2e12477ba4761 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal3fb29bab3a8233ace8b2e12477ba4761 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.th','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.th','data' => ['class' => 'text-center']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table.th'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?>... <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'text-center']); ?><em class="icon ni ni-more-h"></em> <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal3fb29bab3a8233ace8b2e12477ba4761)): ?>
 <?php $attributes = $__attributesOriginal3fb29bab3a8233ace8b2e12477ba4761; ?>
@@ -188,18 +188,16 @@
 <?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
 <?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginaleca1dccf8d8f432f50f17071a804c199 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginaleca1dccf8d8f432f50f17071a804c199 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('admin.table.td'); ?>
+                    <?php if (isset($component)) { $__componentOriginal4d97fc85576508a3b97b3ed4809886d1 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal4d97fc85576508a3b97b3ed4809886d1 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.td-action','data' => ['class' => 'text-center']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('admin.table.td-action'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?>
-                        <td class="tb-odr-action">
-
+<?php $component->withAttributes(['class' => 'text-center']); ?>
                             <div class="dropdown">
                                 <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
@@ -216,16 +214,15 @@
                                     </ul>
                                 </div>
                             </div>
-                        </td>
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginaleca1dccf8d8f432f50f17071a804c199)): ?>
-<?php $attributes = $__attributesOriginaleca1dccf8d8f432f50f17071a804c199; ?>
-<?php unset($__attributesOriginaleca1dccf8d8f432f50f17071a804c199); ?>
+<?php if (isset($__attributesOriginal4d97fc85576508a3b97b3ed4809886d1)): ?>
+<?php $attributes = $__attributesOriginal4d97fc85576508a3b97b3ed4809886d1; ?>
+<?php unset($__attributesOriginal4d97fc85576508a3b97b3ed4809886d1); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginaleca1dccf8d8f432f50f17071a804c199)): ?>
-<?php $component = $__componentOriginaleca1dccf8d8f432f50f17071a804c199; ?>
-<?php unset($__componentOriginaleca1dccf8d8f432f50f17071a804c199); ?>
+<?php if (isset($__componentOriginal4d97fc85576508a3b97b3ed4809886d1)): ?>
+<?php $component = $__componentOriginal4d97fc85576508a3b97b3ed4809886d1; ?>
+<?php unset($__componentOriginal4d97fc85576508a3b97b3ed4809886d1); ?>
 <?php endif; ?>
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -253,4 +250,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/race/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/race/index.blade.php ENDPATH**/ ?>

@@ -10,9 +10,9 @@
 
 <form class="row gy-2" method="POST" action="{{ route('register') }}">
         @csrf
-
+    @dump($errors->all())
         <!-- Name -->
-        <x-admin.form-input-row class="col-12" label="Nom" required placeholder="Le nom de l'aliment" name="name" required autofocus autocomplete="name" />
+        <x-admin.form-input-row class="col-12" label="Nom" required placeholder="Le nom de l'aliment" inputName="name" required autofocus autocomplete="name" />
 
 
 
@@ -23,7 +23,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div> --}}
 
-        <x-admin.form-input-row class="col-12" type="email" label="Mail" required placeholder="Entrez le mail" name="email" required autofocus autocomplete="email" />
+        <x-admin.form-input-row class="col-12" type="email" label="Mail" required placeholder="Entrez le mail" inputName="email" required autofocus autocomplete="email" />
 
 
         <!-- Password -->
@@ -38,7 +38,7 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div> --}}
 
-        <x-admin.form-input-row class="col-12" type="password" label="Mot de Passe" required placeholder="Entrez votre mot de passe" name="password" required autofocus autocomplete="password" />
+        <x-admin.form-input-row class="col-12" type="password" label="Mot de Passe" required placeholder="Entrez votre mot de passe" inputName="password" required autofocus autocomplete="password" />
 
 
         <!-- Confirm Password -->
@@ -52,7 +52,7 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div> --}}
 
-        <x-admin.form-input-row class="col-12" type="password" label="Confirmez votre mot de passe" required placeholder="Entrez votre mot de passe" name="password_confirmation" required autofocus autocomplete="password_confirmation" />
+        <x-admin.form-input-row class="col-12" type="password" label="Confirmez votre mot de passe" required placeholder="Entrez votre mot de passe" inputName="password_confirmation" required autofocus autocomplete="password_confirmation" />
 
         <div>
 
