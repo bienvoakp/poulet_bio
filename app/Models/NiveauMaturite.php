@@ -12,10 +12,14 @@ class NiveauMaturite extends Model
         'poids_max',
         'age_min',
         'age_max',
-        'energie'
+        'energie',
+        'animal_id'
     ];
 
     public function composition_nutritives(){
         return $this->hasMany(CompositionNutritive::class, 'niveau_maturite_id');
+    }
+    public function animal(){
+        return $this->belongsTo(Animal::class, 'animal_id');
     }
 }

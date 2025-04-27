@@ -50,7 +50,8 @@ unset($__defined_vars); ?>
 
         </label>
         <div class="form-control-wrap">
-            <input value="<?php echo e(old($inputName, $defaultValue)); ?>"                 class="form-control"
+            <input
+             value="<?php echo e(old($inputName, $defaultValue)); ?>"                 class="form-control"
                 <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?> id="<?php echo e($inputId); ?>"
                 name="<?php echo e($inputName); ?>">
         </div>

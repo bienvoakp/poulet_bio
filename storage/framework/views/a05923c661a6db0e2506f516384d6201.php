@@ -27,7 +27,7 @@
 
     
 
-     <?php if (isset($component)) { $__componentOriginal53cf72b3da4b8700c9115c02c0eead10 = $component; } ?>
+    <?php if (isset($component)) { $__componentOriginal53cf72b3da4b8700c9115c02c0eead10 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53cf72b3da4b8700c9115c02c0eead10 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.table.table','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.table'); ?>
@@ -236,22 +236,32 @@
 <?php $component->withAttributes(['class' => 'text-center']); ?>
 
 
-                            <div class="dropdown">
-                                <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
-                                    <ul class="link-list-plain">
-                                        <li><a href="<?php echo e(route('aliments.edit', $aliment->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
+                        <div class="dropdown">
+                            <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"
+                                data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
+                                <ul class="link-list-plain">
+                                    <li><a href="<?php echo e(route('aliments.edit', $aliment->id)); ?>"
+                                            class="text-primary d-flex justify-content-center"><i
+                                                class="fas fa-marker"></i></a></li>
 
-                                        <li><a href="<?php echo e(route('aliments.show', $aliment->id)); ?>" class="text-primary d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="<?php echo e(route('aliments.show', $aliment->id)); ?>"
+                                            class="text-primary d-flex justify-content-center"><i
+                                                class="fas fa-eye"></i></a></li>
 
-                                        <li><a href="<?php echo e(route('aliments.destroy', $aliment->id)); ?>" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cette aliment ?')) document.getElementById('delete-aliment-<?php echo e($aliment->id); ?>').submit();"><i class="fas fa-trash"></i></a></li>
-                                        <form id="delete-aliment-<?php echo e($aliment->id); ?>" action="<?php echo e(route('aliments.destroy', $aliment->id)); ?>" method="POST" style="display: none;">
-                                            <?php echo csrf_field(); ?>
-                                            <?php echo method_field('DELETE'); ?>
-                                        </form>
-                                    </ul>
-                                </div>
+                                    <li><a href="<?php echo e(route('aliments.destroy', $aliment->id)); ?>"
+                                            class="text-danger d-flex justify-content-center"
+                                            onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cette aliment ?')) document.getElementById('delete-aliment-<?php echo e($aliment->id); ?>').submit();"><i
+                                                class="fas fa-trash"></i></a></li>
+                                    <form id="delete-aliment-<?php echo e($aliment->id); ?>"
+                                        action="<?php echo e(route('aliments.destroy', $aliment->id)); ?>" method="POST"
+                                        style="display: none;">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                    </form>
+                                </ul>
                             </div>
+                        </div>
 
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -285,6 +295,12 @@
 <?php $component = $__componentOriginal53cf72b3da4b8700c9115c02c0eead10; ?>
 <?php unset($__componentOriginal53cf72b3da4b8700c9115c02c0eead10); ?>
 <?php endif; ?>
+    <?php if($aliments->links()->paginator->hasPages()): ?>
+        <div class="card-footer pb-1">
+            <?php echo e($aliments->links()); ?>
+
+        </div>
+    <?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 

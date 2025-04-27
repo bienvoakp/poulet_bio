@@ -11,9 +11,13 @@ class Animal extends Model
         'race_id',
         'titre',
         'desc'
+
     ];
 
     public function race(){
         return $this->belongsTo(Race::class);
+    }
+    public function niveau_maturites(){
+        return $this->hasMany(NiveauMaturite::class);
     }
 }

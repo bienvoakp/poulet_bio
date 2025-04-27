@@ -6,13 +6,7 @@
             <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex"
                 data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
         </div>
-        <div class="nk-sidebar-brand">
-            <a href="html/index.html" class="logo-link nk-sidebar-logo">
-                <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x"
-                    alt="logo-dark">
-            </a>
-        </div>
+        
     </div><!-- .nk-sidebar-element -->
     <div class="nk-sidebar-element nk-sidebar-body">
         <div class="nk-sidebar-content">
@@ -20,14 +14,14 @@
                 <ul class="nk-menu">
                     <?php if (isset($component)) { $__componentOriginal53a75cf76934e0059aa69f821f845af4 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53a75cf76934e0059aa69f821f845af4 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.sidebar-menu-link','data' => ['label' => 'Tableau de bord','icon' => 'fas fa-chart-line','href' => '/bord']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.sidebar-menu-link','data' => ['label' => 'Tableau de bord','icon' => 'fas fa-chart-line','href' => ''.e(route('dashboard')).'']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.sidebar-menu-link'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['label' => 'Tableau de bord','icon' => 'fas fa-chart-line','href' => '/bord']); ?>
+<?php $component->withAttributes(['label' => 'Tableau de bord','icon' => 'fas fa-chart-line','href' => ''.e(route('dashboard')).'']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal53a75cf76934e0059aa69f821f845af4)): ?>

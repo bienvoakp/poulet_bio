@@ -3,22 +3,23 @@
 namespace App\Livewire;
 
 use App\Models\Aliment;
-use App\Models\CompositionNutritiveAliment;
+use App\Models\CompositionNutritive;
+use App\Models\NiveauMaturite;
 use Livewire\Component;
 
-class CompositionAlimentRepeater extends Component
+class NiveauMaturiteRepeater extends Component
 {
-    public ?Aliment $aliment=null;
+    public ?NiveauMaturite $niveau_maturite=null;
 
     PUBLIC $composition_nutritives = [];
 
     public function mount()
     {
-        $current_data = $this->aliment?->composition_nutritives->map(function (CompositionNutritiveAliment $data) {
+        $current_data = $this->niveau_maturite?->composition_nutritives->map(function (CompositionNutritive $data) {
             return [
                 "id" => $data->id,
-                "nutriment_id" => $data->nutriment_id,
                 "proportion" => $data->proportion,
+                "nutriment_id" => $data->nutriment_id,
             ];
         })->all();
         $this->composition_nutritives = array_merge($this->composition_nutritives, $current_data ?? []);

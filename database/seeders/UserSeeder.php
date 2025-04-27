@@ -17,9 +17,10 @@ class UserSeeder extends Seeder
             'email' => 'bienvenuakpo@poultry.com',
         ], [
             'name' => 'Poultry Admin User',
-            'password' => Hash::make('Dile25$$99'), // Change this to a secure password
+            'password' => Hash::make('Dile25$$99'),
+            // Change this to a secure password
         ]);
 
-        $user->assignRole('admin');
+        $user->assignRole('Admin');
     }
 }

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\User\StoreUserRequest;
 use App\Models\Race;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use App\Http\Requests\User\StoreUserRequest;
 
 class UserController extends Controller
 {
@@ -38,7 +39,21 @@ class UserController extends Controller
     {
         $validated = $request->validated();
 
-        $user = User::create($validated);
+        /** @var User $user */
+        $user = User::create([
+            ...$validated,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if ($request->role == 'admin') {
+            $user->assignRole('Admin');
+        }
+
+        if ($request->role == 'user') {
+            $user->assignRole('Customer');
+        }
+
+        $user->sendEmailVerificationNotification();
 
         return redirect()->route('users.index')->with('success', 'Utilisateur créé avec succès');
     }

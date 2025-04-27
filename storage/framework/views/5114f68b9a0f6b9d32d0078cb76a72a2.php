@@ -56,19 +56,19 @@ unset($__defined_vars); ?>
         </label>
         <div class="form-control-wrap">
             <select class="form-select" id="<?php echo e($inputId); ?>" name="<?php echo e($inputName); ?>" <?php echo e($attributes->except(['value', 'id', 'class', 'name'])); ?>>
-                <option value="" <?php if($required): echo 'disabled'; endif; ?> <?php echo e(old($inputName, $defaultValue) === '' ? 'selected' : ''); ?>>
+                <option value="" <?php echo e(old($inputName, $defaultValue) == null ? 'selected' : ''); ?>>
                    <?php echo e($placeholder); ?>
 
                 </option>
-                <?php $__currentLoopData = $options; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value => $option): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($value); ?>" <?php echo e(old($inputName, $defaultValue) == $value ? 'selected' : ''); ?>>
+                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $options; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value => $option): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($value); ?>" <?php echo e(old($inputName, $defaultValue) === $value ? 'selected' : ''); ?>>
                         <?php echo e($option); ?>
 
                     </option>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
             </select>
         </div>
-        <?php $__errorArgs = [$inputName];
+        <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$inputName];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -80,7 +80,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
         <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
     </div>
 </div>
 <?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/components/admin/form-select-row.blade.php ENDPATH**/ ?>

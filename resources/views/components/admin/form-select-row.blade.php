@@ -19,11 +19,11 @@
         </label>
         <div class="form-control-wrap">
             <select class="form-select" id="{{ $inputId }}" name="{{ $inputName }}" {{ $attributes->except(['value', 'id', 'class', 'name']) }}>
-                <option value="" @disabled($required) {{ old($inputName, $defaultValue) === '' ? 'selected' : '' }}>
+                <option value="" {{ old($inputName, $defaultValue) == null ? 'selected' : '' }}>
                    {{ $placeholder }}
                 </option>
                 @foreach ($options as $value => $option)
-                    <option value="{{ $value }}" {{ old($inputName, $defaultValue) == $value ? 'selected' : '' }}>
+                    <option value="{{ $value }}" {{ old($inputName, $defaultValue) === $value ? 'selected' : '' }}>
                         {{ $option }}
                     </option>
                 @endforeach

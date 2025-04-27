@@ -38,7 +38,7 @@ class RaceController extends Controller
 
         $race = Race::create($validated);
 
-        return redirect()->route('races.index')->with('success', 'Race créé avec succès');
+        return redirect()->route('races.index')->with('success', 'Race créée avec succès');
     }
 
     /**
@@ -76,7 +76,7 @@ class RaceController extends Controller
 
         $race->update($validated);
 
-        return redirect()->route('races.index')->with('success', 'Race modifié avec succès');
+        return redirect()->route('races.index')->with('success', 'Race modifiée avec succès');
     }
 
     /**
@@ -88,6 +88,6 @@ class RaceController extends Controller
 
         $race->delete();
 
-        return redirect()->route('races.index')->with('success', 'Race supprimé avec succès');
+        return redirect()->route('races.index')->with('success', 'Race supprimée avec succès');
     }
 }

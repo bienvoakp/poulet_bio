@@ -1,0 +1,1 @@
+<?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/race/show.blade.php ENDPATH**/ ?>

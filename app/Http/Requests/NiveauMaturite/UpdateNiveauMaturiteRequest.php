@@ -22,7 +22,13 @@ class UpdateNiveauMaturiteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:255',
+            'desc' => 'required|string',
+            'energie' => 'required|numeric',
+            'poids_min' => 'required|numeric',
+            'poids_max' => 'required|numeric',
+            'age_max' => 'required|numeric',
+            'age_min' => 'required|numeric'
         ];
     }
 }

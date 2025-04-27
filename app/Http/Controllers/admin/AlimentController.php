@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Aliment\StoreAlimentRequest;
 use App\Http\Requests\Aliment\UpdateAlimentRequest;
+use App\Models\CompositionNutritiveAliment;
 
 class AlimentController extends Controller
 {
@@ -35,10 +36,10 @@ class AlimentController extends Controller
     {
         $validated = $request->validated();
 
-        $aliment = Aliment::create($validated);
-        $aliment->composition_nutritives()->createMany($request->composition_nutritive_aliments ?? []);
-
         // dd($request->all());
+
+        $aliment = Aliment::create($validated);
+        $aliment->composition_nutritives()->createMany($request->composition_nutritives ?? []);
 
 
         return redirect()->route('aliments.index')->with('success', 'Aliment créé avec succès');
@@ -78,6 +79,23 @@ class AlimentController extends Controller
         $validated = $request->validated();
 
         $aliment->update($validated);
+
+        // Update existing composition nutritives
+        $compositions = collect($request->composition_nutritives ?? []);
+
+        $compositions->filter(fn($data) => !empty($data['id']))
+            ->each(fn($data) => CompositionNutritiveAliment::find($data['id'])?->update($data));
+
+        // Delete removed composition nutritives
+        $aliment->composition_nutritives()
+            ->whereNotIn('id', $compositions->pluck('id')->filter())
+            ->delete();
+
+        // Create new composition nutritives
+        $aliment->composition_nutritives()->createMany(
+            $compositions->filter(fn($data) => empty($data['id']))->all()
+        );
+
 
         return redirect()->route('aliments.index')->with('success', 'Aliment modifié avec succès');
     }

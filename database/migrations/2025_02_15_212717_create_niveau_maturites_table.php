@@ -18,9 +18,10 @@ return new class extends Migration
             $table->float('poids_max');
             $table->integer('age_min');
             $table->integer('age_max');
-            $table->string('energie'); 
+            $table->string('energie');
             $table->timestamps();
             $table->foreignId('created_by_id')->nullable()->constrained('users');
+            $table->foreignId('animal_id')->nullable()->constrained('animals');
             $table->foreignId('updated_by_id')->nullable()->constrained('users');
             $table->foreignId('deleted_by_id')->nullable()->constrained('users');
         });

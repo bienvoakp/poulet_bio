@@ -2,7 +2,7 @@
     $titre = !empty($aliment) ? $aliment->titre : null;
     $energie = !empty($aliment) ? $aliment->energie : null;
     $desc = !empty($aliment) ? $aliment->desc : null;
-    $nutriments = \App\Models\Nutriment::all();
+    // $nutriments = \App\Models\Nutriment::all();
 @endphp
 
 <x-admin.form-input-row label="Nom de l'aliment" required placeholder="Le nom de l'aliment" inputName="titre"
@@ -17,12 +17,8 @@
 
 <x-admin.form-checkbox-row label="Disponible ?" inputName="disponible" value="1" :checked="old('disponible', $aliment->disponible ?? false) == true" />
 
-    @dump(old())
+{{-- @dump(old()) --}}
 
-
-
-@section('script')
-    <script>
-        $repeater.setList(@json(old('composition_nutritive_aliments')));
-    </script>
-@endsection
+@livewire('composition-aliment-repeater', [
+    'aliment' => isset($aliment) ? $aliment : null,
+])
