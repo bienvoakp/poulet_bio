@@ -32,6 +32,7 @@ class UserController extends Controller
         return view('admin.user.create', ['user' => new User()] );
     }
 
+
     /**
      * Store a newly created resource in storage.
      */

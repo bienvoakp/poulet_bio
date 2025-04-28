@@ -39,18 +39,17 @@
                         @endif
                     </x-admin.table.td>
                     <x-admin.table.td-action class="text-center">
-
-
                             <div class="dropdown">
                                 <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
                                     <ul class="link-list-plain">
-                                        <li><a href="{{ route('animaux.edit', $animal->id) }}" class="text-primary d-flex justify-content-center"><i class="fas icon fa-marker"></i>Modifier</a></li>
+                                        <li><a href="{{ route('animaux.edit', $animal->id) }}" class="text-secondary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
 
-                                        <li><a href="{{ route('animaux.show', $animal->id) }}" class="text-primary d-flex justify-content-center"><i class="fas icon fa-eye"></i>Voir</a></li>
 
-                                        <li><a href="{{ route('animaux.destroy', $animal->id) }}" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cet animal ?')) document.getElementById('delete-animal-{{ $animal->id }}').submit();"><i class="fas icon text-danger fa-trash"></i>Supprimer</a></li>
-                                        <form id="delete-animal-{{ $animal->id }}" action="{{ route('animaux.destroy', $animal->id) }}" method="POST" style="display: none;">
+                                        <li><a href="{{ route('animaux.show', $animal->id) }}" class="text-info d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
+
+                                        <li><a href="{{ route('animaux.destroy', $animal->id) }}" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cet animal ?')) document.getElementById('delete-animal-{{ $animal->id }}').submit();"><i class="fas fa-trash"></i></a></li>
+                                        <form id="delete-race-{{ $animal->id }}" action="{{ route('animaux.destroy', $animal->id) }}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
                                         </form>

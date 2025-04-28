@@ -2,19 +2,20 @@
     $nom = !empty($user) ? $user->name : null;
     $email = !empty($user) ? $user->email : null;
     $password = !empty($user) ? $user->password : null;
+    $image = !empty($user) ? $user->image : null;
 ?>
 
 <div class="row">
     <?php if (isset($component)) { $__componentOriginal2fc4ee10de36c616941cdd84c8511d79 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2fc4ee10de36c616941cdd84c8511d79 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-select-row','data' => ['label' => 'Statut','class' => 'col-lg-6','placeholder' => 'Selectionner le statut de l\'utilisateur','required' => true,'inputName' => 'role','options' => ['admin' => 'Admin', 'user' => 'User']]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-select-row','data' => ['label' => 'Statut','class' => 'col-lg-6','placeholder' => 'Selectionner le statut de l\'utilisateur','required' => true,'inputName' => 'statut','options' => ['admin' => 'Admin', 'user' => 'User'],'defaultValue' => $user->statut ?? 'user']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.form-select-row'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['label' => 'Statut','class' => 'col-lg-6','placeholder' => 'Selectionner le statut de l\'utilisateur','required' => true,'inputName' => 'role','options' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['admin' => 'Admin', 'user' => 'User'])]); ?>
+<?php $component->withAttributes(['label' => 'Statut','class' => 'col-lg-6','placeholder' => 'Selectionner le statut de l\'utilisateur','required' => true,'inputName' => 'statut','options' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['admin' => 'Admin', 'user' => 'User']),'defaultValue' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($user->statut ?? 'user')]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal2fc4ee10de36c616941cdd84c8511d79)): ?>
@@ -89,6 +90,29 @@
 <?php if (isset($__componentOriginal05654859b3e6faac406a8a768194bb6d)): ?>
 <?php $component = $__componentOriginal05654859b3e6faac406a8a768194bb6d; ?>
 <?php unset($__componentOriginal05654859b3e6faac406a8a768194bb6d); ?>
+<?php endif; ?>
+</div>
+
+<div class="row">
+    <?php if (isset($component)) { $__componentOriginal854250c3187cf87164a0e8f08fbbcb87 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal854250c3187cf87164a0e8f08fbbcb87 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-file','data' => ['label' => 'Choisir une image de profil (optionnel)','inputName' => 'image','defaultValue' => $image]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('admin.form-input-file'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['label' => 'Choisir une image de profil (optionnel)','inputName' => 'image','defaultValue' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($image)]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal854250c3187cf87164a0e8f08fbbcb87)): ?>
+<?php $attributes = $__attributesOriginal854250c3187cf87164a0e8f08fbbcb87; ?>
+<?php unset($__attributesOriginal854250c3187cf87164a0e8f08fbbcb87); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal854250c3187cf87164a0e8f08fbbcb87)): ?>
+<?php $component = $__componentOriginal854250c3187cf87164a0e8f08fbbcb87; ?>
+<?php unset($__componentOriginal854250c3187cf87164a0e8f08fbbcb87); ?>
 <?php endif; ?>
 </div>
 

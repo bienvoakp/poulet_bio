@@ -30,13 +30,13 @@
                     <x-admin.table.td> {{ $user->email }} </x-admin.table.td>
                     <x-admin.table.td-action class="text-center">
                         @if ($user->email_verified_at)
-                            "Vérifié le ".{{ format_datetime($user->email_verified_at) }}
+                            {{ 'Vérifié le ' . \Carbon\Carbon::parse($user->email_verified_at)->locale('fr')->isoFormat('dddd D MMMM YYYY') . ' à ' . $user->email_verified_at->format('H:i') }}
                         @else
-                            "Non vérifié"
+                            {{ 'Non vérifié' }}
                         @endif
                     </x-admin.table.td-action>
 
-                    
+
                 </x-admin.table.tr>
             @endforeach
         </x-slot:tbody>

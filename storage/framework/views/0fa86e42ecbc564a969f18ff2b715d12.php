@@ -199,10 +199,11 @@
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'text-center']); ?>
                         <?php if($user->email_verified_at): ?>
-                            "Vérifié le ".<?php echo e(format_datetime($user->email_verified_at)); ?>
+                            <?php echo e('Vérifié le ' . \Carbon\Carbon::parse($user->email_verified_at)->locale('fr')->isoFormat('dddd D MMMM YYYY') . ' à ' . $user->email_verified_at->format('H:i')); ?>
 
                         <?php else: ?>
-                            "Non vérifié"
+                            <?php echo e('Non vérifié'); ?>
+
                         <?php endif; ?>
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -215,7 +216,7 @@
 <?php unset($__componentOriginal4d97fc85576508a3b97b3ed4809886d1); ?>
 <?php endif; ?>
 
-                    
+
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal06c3fe66d396abf7c82811bd08cac844)): ?>

@@ -31,28 +31,19 @@
                     <x-admin.table.td> {{ $aliment->energie_label() }} </x-admin.table.td>
                     <x-admin.table.td> {{ $aliment->is_disponible() }} </x-admin.table.td>
                     <x-admin.table.td-action class="text-center">
-
-
                         <div class="dropdown">
                             <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"
                                 data-offset="-8,0" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
                                 <ul class="link-list-plain">
-                                    <li><a href="{{ route('aliments.edit', $aliment->id) }}"
-                                            class="text-primary d-flex justify-content-center"><i
-                                                class="fas fa-marker"></i></a></li>
+                                    <li><a href="{{ route('aliments.edit', $aliment->id) }}" class="text-secondary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
 
-                                    <li><a href="{{ route('aliments.show', $aliment->id) }}"
-                                            class="text-primary d-flex justify-content-center"><i
-                                                class="fas fa-eye"></i></a></li>
 
-                                    <li><a href="{{ route('aliments.destroy', $aliment->id) }}"
-                                            class="text-danger d-flex justify-content-center"
-                                            onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cette aliment ?')) document.getElementById('delete-aliment-{{ $aliment->id }}').submit();"><i
-                                                class="fas fa-trash"></i></a></li>
-                                    <form id="delete-aliment-{{ $aliment->id }}"
-                                        action="{{ route('aliments.destroy', $aliment->id) }}" method="POST"
-                                        style="display: none;">
+                                    <li><a href="{{ route('aliments.show', $aliment->id) }}" class="text-info d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
+
+
+                                    <li><a href="{{ route('aliments.destroy', $aliment->id) }}" class="text-danger d-flex justify-content-center" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cet aliment ?')) document.getElementById('delete-aliment-{{ $aliment->id }}').submit();"><i class="fas fa-trash"></i></a></li>
+                                    <form id="delete-aliment-{{ $aliment->id }}" action="{{ route('aliments.destroy', $aliment->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                     </form>

@@ -2,8 +2,9 @@
     <div class="container-fluid">
         <div class="nk-header-wrap">
             <div class="nk-menu-trigger d-xl-none ms-n1">
-                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em
-                        class="icon ni ni-menu"></em></a>
+                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu">
+                    <em class="icon ni ni-menu"></em>
+                </a>
             </div>
 
 
@@ -33,11 +34,27 @@
                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                 <div class="user-card">
                                     <div class="user-avatar">
-                                        <span>AB</span>
+                                        <a href="#" class="rounded-circle">
+                                            <?php if(Auth::check() && Auth::user()->image): ?>
+                                                <img src="<?php echo e(asset('admin/assets/profile/' . Auth::user()->image)); ?>"
+                                                    class="img-fluid"
+                                                    style="width: 50px; height: 50px; object-fit: cover;"
+                                                    alt="<?php echo e(Auth::user()->name); ?>" />
+                                            <?php else: ?>
+                                                <img src="<?php echo e(asset('admin/assets/profile/logo.png')); ?>"
+                                                    class="img-fluid"
+                                                    style="width: 50px; height: 50px; object-fit: cover;"
+                                                    alt="Default profile" />
+                                            <?php endif; ?>
+
+                                            
+                                        </a>
+
+                                        
                                     </div>
                                     <div class="user-info">
-                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                        <span class="sub-text">info@softnio.com</span>
+                                        <span class="lead-text"><?php echo e(Auth::user()->name); ?></span>
+                                        <span class="sub-text"><?php echo e(Auth::user()->email); ?></span>
                                     </div>
                                 </div>
                             </div>

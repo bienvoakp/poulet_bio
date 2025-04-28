@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
         ], [
             'name' => 'Poultry Admin User',
             'password' => Hash::make('Dile25$$99'),
-            // Change this to a secure password
+            'statut' => 'admin',
+            'email_verified_at' => now()
         ]);
 
         $user->assignRole('Admin');
