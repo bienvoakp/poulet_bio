@@ -2,6 +2,7 @@
     $nom = !empty($user) ? $user->name : null;
     $email = !empty($user) ? $user->email : null;
     $password = !empty($user) ? $user->password : null;
+    $statut = !empty($user) ? $user->statut : null;
     $image = !empty($user) ? $user->image : null;
 @endphp
 
@@ -18,7 +19,7 @@
     <x-admin.form-input-row label="Mot de Passe" class="col-lg-6" type="passeword" required placeholder="Entrez le mot de passe de l'utilisateur" inputName="password" :defaultValue="$password" />
 </div>
 
-<div class="row">
+{{-- <div class="row">
     <x-admin.form-input-file label="Choisir une image de profil (optionnel)" inputName="image" :defaultValue="$image" />
-</div>
+</div> --}}
 

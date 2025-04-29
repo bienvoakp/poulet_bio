@@ -1,32 +1,33 @@
 @extends('layouts.admin')
 
-@php($useTogglePassword = true)
-@php($useTomSelect = true)
-
-@section('title')
-Modifier l'utilisateur <q>{{ $user->name }}</q>
-@endsection
-
-@section('navigation')
-<li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ route('admin.index') }}">Accueil</a></li>
-<li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ route('admin.utilisateurs.index') }}">Utilisateurs</a>
-</li>
-<li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ route('admin.utilisateurs.show',['user' => $user->uuid]) }}">{{ $user->name }}</a></li>
-<li class="breadcrumb-item active text-primary" aria-current="page">Modifier</li>
-@endsection
+@section('title', 'Modifier un utilisateur')
+@section('description', 'Modifiez un utilisateur ici')
 
 @section('actions')
-<a class="btn btn-primary" href="{{ route('admin.utilisateurs.show', ['user' => $user->uuid]) }}">Détails</a>
-<a class="btn btn-white shadow-sm" href="{{ route('admin.utilisateurs.index') }}">Retour</a>
+    <x-admin.primary-link href="{{ route('users.index') }}">Retour</x-admin.primary-link>
 @endsection
 
 @section('content')
-<div class="card">
-    <form action="{{ route('admin.utilisateurs.update',['user' => $user->uuid]) }}" method="POST"
-        enctype="multipart/form-data">
+
+    <form class="row gy-4" action="{{ route('users.update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
         @include('admin.user._partials.form')
+
+        <div class="col-12">
+            <x-admin.primary-button>Modifier</x-admin.primary-button>
+        </div>
     </form>
-</div>
+
 @endsection

@@ -238,7 +238,6 @@
 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
          <?php $__env->endSlot(); ?>
-
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal53cf72b3da4b8700c9115c02c0eead10)): ?>
@@ -249,6 +248,13 @@
 <?php $component = $__componentOriginal53cf72b3da4b8700c9115c02c0eead10; ?>
 <?php unset($__componentOriginal53cf72b3da4b8700c9115c02c0eead10); ?>
 <?php endif; ?>
+
+    <?php if($nutriments->links()->paginator->hasPages()): ?>
+    <div class="card-footer pb-1">
+        <?php echo e($nutriments->links()); ?>
+
+    </div>
+    <?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 

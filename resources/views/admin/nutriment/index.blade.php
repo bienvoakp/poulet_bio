@@ -51,7 +51,12 @@
             </x-admin.table.tr>
             @endforeach
         </x-slot:tbody>
-
     </x-admin.table>
+
+    @if ($nutriments->links()->paginator->hasPages())
+    <div class="card-footer pb-1">
+        {{ $nutriments->links() }}
+    </div>
+    @endif
 
 @endsection

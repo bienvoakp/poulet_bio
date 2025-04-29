@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -64,7 +65,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-
+        $user = User::findOrFail($id);
+        return view('admin.user.show', compact('user'));
     }
 
     /**
@@ -72,17 +74,36 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-
+        $user = User::findOrFail($id);
+        return view('admin.user.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateUserRequest $request, string $id)
     {
+        $user = User::findOrFail($id);
+        $validated = $request->validated();
 
-        return redirect()->route('admin.users.index')
-            ->with('success', 'User updated successfully.');
+        if ($request->filled('password')) {
+            $validated['password'] = Hash::make($request->password);
+        } else {
+            unset($validated['password']);
+        }
+
+        $user->update($validated);
+
+        if ($request->role == 'admin') {
+            $user->syncRoles(['Admin']);
+        }
+
+        if ($request->role == 'user') {
+            $user->syncRoles(['Customer']);
+        }
+
+        return redirect()->route('users.index')
+            ->with('success', 'Utilisateur mis à jour avec succès');
     }
 
     /**
@@ -90,8 +111,10 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        $user = User::findOrFail($id);
+        $user->delete();
 
-        return redirect()->route('admin.users.index')
-            ->with('success', 'User deleted successfully.');
+        return redirect()->route('users.index')
+            ->with('success', 'Utilisateur supprimé avec succès.');
     }
 }

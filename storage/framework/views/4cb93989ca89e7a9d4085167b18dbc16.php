@@ -2,6 +2,7 @@
     $nom = !empty($user) ? $user->name : null;
     $email = !empty($user) ? $user->email : null;
     $password = !empty($user) ? $user->password : null;
+    $statut = !empty($user) ? $user->statut : null;
     $image = !empty($user) ? $user->image : null;
 ?>
 
@@ -93,27 +94,6 @@
 <?php endif; ?>
 </div>
 
-<div class="row">
-    <?php if (isset($component)) { $__componentOriginal854250c3187cf87164a0e8f08fbbcb87 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal854250c3187cf87164a0e8f08fbbcb87 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-file','data' => ['label' => 'Choisir une image de profil (optionnel)','inputName' => 'image','defaultValue' => $image]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('admin.form-input-file'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['label' => 'Choisir une image de profil (optionnel)','inputName' => 'image','defaultValue' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($image)]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal854250c3187cf87164a0e8f08fbbcb87)): ?>
-<?php $attributes = $__attributesOriginal854250c3187cf87164a0e8f08fbbcb87; ?>
-<?php unset($__attributesOriginal854250c3187cf87164a0e8f08fbbcb87); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal854250c3187cf87164a0e8f08fbbcb87)): ?>
-<?php $component = $__componentOriginal854250c3187cf87164a0e8f08fbbcb87; ?>
-<?php unset($__componentOriginal854250c3187cf87164a0e8f08fbbcb87); ?>
-<?php endif; ?>
-</div>
+
 
 <?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/user/_partials/form.blade.php ENDPATH**/ ?>

@@ -34,7 +34,7 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
 
                                     <ul class="link-list-plain">
-                                        
+
                                         <li><a href="{{ route('races.edit', $race->id) }}" class="text-secondary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
 
                                         <li><a href="{{ route('races.show', $race->id) }}" class="text-info d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
@@ -53,5 +53,11 @@
         </x-slot:tbody>
 
     </x-admin.table>
+
+    @if ($races->links()->paginator->hasPages())
+    <div class="card-footer pb-1">
+        {{ $races->links() }}
+    </div>
+    @endif
 
 @endsection

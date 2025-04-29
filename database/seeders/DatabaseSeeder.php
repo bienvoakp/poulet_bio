@@ -1,7 +1,10 @@
 <?php
 
-
+use App\Models\Nutriment;
 use App\Models\User;
+use Database\Seeders\AlimentSeeder;
+use Database\Seeders\AnimalSeeder;
+use Database\Seeders\NutrimentSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
@@ -18,6 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             UserSeeder::class,
+            NutrimentSeeder::class,
+            AlimentSeeder::class,
+            AnimalSeeder::class,
         ]);
     }
 }

@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white py-3">
+                    <div class="card-header bg-info text-white py-3">
                         <h5 class="mb-0">
                             <i class="bi bi-info-circle me-2"></i>
                             Informations principales
@@ -55,6 +55,9 @@
                                 <dt class="col-sm-4 text-muted">Description :</dt>
                                 <dd class="col-sm-8">{{ $animal->desc }}</dd>
                             @endif
+
+                            <dt class="col-sm-4 text-muted">Disponible ? :</dt>
+                            <dd class="col-sm-8 fw-bold">{{ $animal->disponible ? 'Oui' : 'Non' }}</dd>
                         </dl>
                     </div>
                 </div>

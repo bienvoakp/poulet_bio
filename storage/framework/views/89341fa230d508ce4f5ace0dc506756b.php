@@ -203,7 +203,7 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
 
                                     <ul class="link-list-plain">
-                                        
+
                                         <li><a href="<?php echo e(route('races.edit', $race->id)); ?>" class="text-secondary d-flex justify-content-center"><i class="fas fa-marker"></i></a></li>
 
                                         <li><a href="<?php echo e(route('races.show', $race->id)); ?>" class="text-info d-flex justify-content-center"><i class="fas fa-eye"></i></a></li>
@@ -249,6 +249,13 @@
 <?php $component = $__componentOriginal53cf72b3da4b8700c9115c02c0eead10; ?>
 <?php unset($__componentOriginal53cf72b3da4b8700c9115c02c0eead10); ?>
 <?php endif; ?>
+
+    <?php if($races->links()->paginator->hasPages()): ?>
+    <div class="card-footer pb-1">
+        <?php echo e($races->links()); ?>
+
+    </div>
+    <?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 
