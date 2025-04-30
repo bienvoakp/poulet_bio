@@ -87,11 +87,14 @@
                                 </ul>
                             </div>
                         </div>
-                    </li><!-- .dropdown -->
+                    </li>
+
+                    <!-- .dropdown -->
 
                 </ul><!-- .nk-quick-nav -->
             </div><!-- .nk-header-tools -->
         </div><!-- .nk-header-wrap -->
-    </div><!-- .container-fliud -->
+    </div>
+    <!-- .container-fliud -->
 </div>
 <?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/admin/_partials/header.blade.php ENDPATH**/ ?>

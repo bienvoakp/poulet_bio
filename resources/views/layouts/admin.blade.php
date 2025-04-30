@@ -31,8 +31,7 @@
                                     @endif
 
 
-
-
+                                    
 
                                     @yield('content')
                                 </div>

@@ -25,27 +25,33 @@
                                         <span class="language-name">English</span>
                                     </a>
                                 </li>
+                                
                                 <li>
                                     <a href="#" class="language-item">
                                         <img src="./images/flags/spanish.png" alt="" class="language-flag">
                                         <span class="language-name">Español</span>
                                     </a>
                                 </li>
+
                                 <li>
                                     <a href="#" class="language-item">
                                         <img src="./images/flags/french.png" alt="" class="language-flag">
                                         <span class="language-name">Français</span>
                                     </a>
                                 </li>
+
                                 <li>
                                     <a href="#" class="language-item">
                                         <img src="./images/flags/turkey.png" alt="" class="language-flag">
                                         <span class="language-name">Türkçe</span>
                                     </a>
                                 </li>
+
                             </ul>
                         </div>
-                    </li><!-- .dropdown --> --}}
+                    </li>
+
+                    <!-- .dropdown --> --}}
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                             <div class="user-toggle">
@@ -122,10 +128,13 @@
                                 </ul>
                             </div>
                         </div>
-                    </li><!-- .dropdown -->
+                    </li>
+
+                    <!-- .dropdown -->
 
                 </ul><!-- .nk-quick-nav -->
             </div><!-- .nk-header-tools -->
         </div><!-- .nk-header-wrap -->
-    </div><!-- .container-fliud -->
+    </div>
+    <!-- .container-fliud -->
 </div>

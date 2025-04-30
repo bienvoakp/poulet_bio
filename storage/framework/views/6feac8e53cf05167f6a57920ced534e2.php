@@ -7,7 +7,9 @@
                 data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
         </div>
         
-    </div><!-- .nk-sidebar-element -->
+    </div>
+
+    <!-- .nk-sidebar-element -->
     <div class="nk-sidebar-element nk-sidebar-body">
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar>

@@ -1,8 +1,7 @@
-<?php $__env->startSection('title', ' Connexion '); ?>
-<?php $__env->startSection('description', ' ..... '); ?>
+<?php $__env->startSection('title', 'Connexion'); ?>
+<?php $__env->startSection('description', 'Connectez-vous pour accéder à votre espace administrateur'); ?>
 
 <?php $__env->startSection('content'); ?>
-
     <!-- Session Status -->
     <?php if (isset($component)) { $__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal7c1bf3a9346f208f66ee83b06b607fb5 = $attributes; } ?>
@@ -25,21 +24,20 @@
 <?php unset($__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5); ?>
 <?php endif; ?>
 
-    <form method="POST" class="row gy-2" action="<?php echo e(route('login')); ?>">
+    <form method="POST" class="row gy-3" action="<?php echo e(route('login')); ?>">
         <?php echo csrf_field(); ?>
 
         <!-- Email Address -->
-
         <?php if (isset($component)) { $__componentOriginal05654859b3e6faac406a8a768194bb6d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal05654859b3e6faac406a8a768194bb6d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-row','data' => ['class' => 'col-12','type' => 'email','label' => 'Mail','required' => true,'placeholder' => 'Entrez le mail','inputName' => 'email','autofocus' => true,'autocomplete' => 'email']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-row','data' => ['class' => 'col-12','type' => 'email','label' => 'Adresse email','placeholder' => 'exemple@email.com','inputName' => 'email','required' => true,'autofocus' => true,'autocomplete' => 'email']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.form-input-row'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'col-12','type' => 'email','label' => 'Mail','required' => true,'placeholder' => 'Entrez le mail','inputName' => 'email','autofocus' => true,'autocomplete' => 'email']); ?>
+<?php $component->withAttributes(['class' => 'col-12','type' => 'email','label' => 'Adresse email','placeholder' => 'exemple@email.com','inputName' => 'email','required' => true,'autofocus' => true,'autocomplete' => 'email']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal05654859b3e6faac406a8a768194bb6d)): ?>
@@ -52,17 +50,16 @@
 <?php endif; ?>
 
         <!-- Password -->
-
         <?php if (isset($component)) { $__componentOriginal05654859b3e6faac406a8a768194bb6d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal05654859b3e6faac406a8a768194bb6d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-row','data' => ['class' => 'col-12','type' => 'password','label' => 'Mot de Passe','required' => true,'placeholder' => 'Entrez votre mot de passe','inputName' => 'password','autofocus' => true,'autocomplete' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-input-row','data' => ['class' => 'col-12','type' => 'password','label' => 'Mot de passe','placeholder' => 'Votre mot de passe sécurisé','inputName' => 'password','required' => true,'autocomplete' => 'current-password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.form-input-row'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'col-12','type' => 'password','label' => 'Mot de Passe','required' => true,'placeholder' => 'Entrez votre mot de passe','inputName' => 'password','autofocus' => true,'autocomplete' => 'password']); ?>
+<?php $component->withAttributes(['class' => 'col-12','type' => 'password','label' => 'Mot de passe','placeholder' => 'Votre mot de passe sécurisé','inputName' => 'password','required' => true,'autocomplete' => 'current-password']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal05654859b3e6faac406a8a768194bb6d)): ?>
@@ -77,14 +74,14 @@
         <!-- Remember Me -->
         <?php if (isset($component)) { $__componentOriginal38729de5a4b1f4c89e49345526e8468a = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal38729de5a4b1f4c89e49345526e8468a = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-checkbox-row','data' => ['class' => 'col-12','label' => 'Se souvenir de moi','inputName' => 'remember']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.form-checkbox-row','data' => ['class' => 'col-12','label' => 'Garder ma session active','inputName' => 'remember']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.form-checkbox-row'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'col-12','label' => 'Se souvenir de moi','inputName' => 'remember']); ?>
+<?php $component->withAttributes(['class' => 'col-12','label' => 'Garder ma session active','inputName' => 'remember']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal38729de5a4b1f4c89e49345526e8468a)): ?>
@@ -96,20 +93,18 @@
 <?php unset($__componentOriginal38729de5a4b1f4c89e49345526e8468a); ?>
 <?php endif; ?>
 
-        <div>
-
-
+        <div class="mt-2">
             <?php if (isset($component)) { $__componentOriginale88f8aa40b3c8dfd1fd9d84b407092f3 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginale88f8aa40b3c8dfd1fd9d84b407092f3 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.primary-button','data' => ['class' => 'd-block w-100 my-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin.primary-button','data' => ['class' => 'btn-lg d-block w-100 mb-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin.primary-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'd-block w-100 my-4']); ?>
-                <?php echo e(__('Se connecter')); ?>
+<?php $component->withAttributes(['class' => 'btn-lg d-block w-100 mb-4']); ?>
+                <?php echo e(__('Connexion')); ?>
 
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -123,20 +118,30 @@
 <?php endif; ?>
 
             <?php if(Route::has('password.request')): ?>
-                <span>
-                    <?php echo e(__("Vous avez oublié votre mot de passe ? ")); ?>
+                <div class="text-center">
+                    <span class="text-muted">
+                        <?php echo e(__('Mot de passe oublié ?')); ?>
 
+                        <a href="<?php echo e(route('password.request')); ?>" class="text-primary">
+                            <?php echo e(__('Cliquez ici pour le réinitialiser')); ?>
 
-                    <a href="<?php echo e(route('password.request')); ?>">
-                        <?php echo e(__('Réinitialisez-le ')); ?>
-
-                    </a>
-                </span>
+                        </a>
+                    </span>
+                </div>
             <?php endif; ?>
         </div>
     </form>
 
+    <div class="text-center mt-4">
+        <p class="text-muted">
+            <?php echo e(__('Vous n\'avez pas de compte ?')); ?>
 
+            <a href="<?php echo e(route('register')); ?>" class="text-primary">
+                <?php echo e(__('Inscrivez-vous')); ?>
+
+            </a>
+        </p>
+    </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/auth/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.auth', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\COURS IFRI\MON MEMOIRE\poulet_bio\resources\views/auth/login.blade.php ENDPATH**/ ?>
